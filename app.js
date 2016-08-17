@@ -47,17 +47,28 @@ app.get("/", function(req, res) {
     res.render('index', {
     });
 });
-
-app.get('/users', function (req, res) {
- res.render("users");
-});
-
 app.get('/user_dashboard/:username', function (req, res) {
   var username = req.params.username;
  res.render("users");
 });
+app.get('/search',function (req, res){
+  res.render('search');
+});
+app.get('/add', function(req, res){
+  res.render('add');
+});
+app.get('/Picture', function (req, res){
+  res.render('getPic');
+});
+app.get('status', function (req, res){
+  res.render('progress_status');
+});
 app.use(errorHandler);
 
-app.listen(app.get('port'), function() {
-    console.log('Node app is running on port', app.get('port'));
+var port = process.env.PORT || 3000;
+
+var server = app.listen(port, function(){
+  var host =server.address().address;
+  var port = server.address().port;
+  console.log('Node app is running on port http://%s:%s', host, port);
 });
