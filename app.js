@@ -51,6 +51,7 @@ app.get('/user_dashboard/:username', function (req, res) {
   var username = req.params.username;
  res.render("users");
 });
+<<<<<<< HEAD
 app.get('/search',function (req, res){
   res.render('search');
 });
@@ -63,9 +64,12 @@ app.get('/Picture', function (req, res){
 app.get('status', function (req, res){
   res.render('progress_status');
 });
+=======
+
+>>>>>>> 55c3fce8a02f01f51b6713860f9eae83d282da85
 app.use(errorHandler);
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 5000;
 
 var server = app.listen(port, function(){
   var host =server.address().address;
