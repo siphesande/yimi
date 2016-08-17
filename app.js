@@ -7,13 +7,13 @@ var express = require('express'),
     myConnection = require('express-myconnection'),
     bodyParser = require('body-parser');
 
-var dbOptions = {
-    host: 'localhost',
-    user: 'root',
-    password: 'yimi',
-    port: 3306,
-    database: 'yimi'
-};
+// var dbOptions = {
+//     host: 'localhost',
+//     user: 'root',
+//     password: 'yimi',
+//     port: 3306,
+//     database: 'yimi'
+// };
 
 app.set('port', (process.env.PORT || 3000));
 
@@ -24,7 +24,7 @@ app.engine('handlebars', exphbs({
 app.set('view engine', 'handlebars');
 
 //setup middleware
-app.use(myConnection(mysql, dbOptions, 'single'));
+//app.use(myConnection(mysql, dbOptions, 'single'));
 
 app.use(bodyParser.urlencoded({
     extended: false
@@ -42,6 +42,11 @@ function errorHandler(err, req, res, next) {
     });
 }
 
+
+app.get("/", function(req, res) {
+    res.render('index', {
+    });
+});
 
 app.use(errorHandler);
 
