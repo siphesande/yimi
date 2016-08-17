@@ -15,7 +15,7 @@ var dbOptions = {
     database: 'yimi'
 };
 
-app.set('port', (process.env.PORT || 3000));
+app.set('port', (process.env.PORT || 5000));
 
 app.engine('handlebars', exphbs({
     defaultLayout: 'main'
