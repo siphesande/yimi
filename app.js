@@ -56,6 +56,7 @@ app.get('/user_dashboard/:username', function (req, res) {
   var username = req.params.username;
  res.render("users");
 });
+
 app.use(errorHandler);
 
 app.listen(app.get('port'), function() {
