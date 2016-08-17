@@ -47,6 +47,11 @@ app.get("/", function(req, res) {
     res.render('index', {
     });
 });
+
+app.get('/users', function (req, res) {
+ res.render("users");
+});
+
 app.get('/user_dashboard/:username', function (req, res) {
   var username = req.params.username;
  res.render("users");
