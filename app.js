@@ -7,13 +7,13 @@ var express = require('express'),
     myConnection = require('express-myconnection'),
     bodyParser = require('body-parser');
 
-// var dbOptions = {
-//     host: 'localhost',
-//     user: 'root',
-//     password: 'yimi',
-//     port: 3306,
-//     database: 'yimi'
-// };
+var dbOptions = {
+    host: 'localhost',
+    user: 'root',
+    password: 'coder123',
+    port: 3306,
+    database: 'yimi'
+};
 
 app.set('port', (process.env.PORT || 3000));
 
@@ -47,7 +47,10 @@ app.get("/", function(req, res) {
     res.render('index', {
     });
 });
-
+app.get('/user_dashboard/:username', function (req, res) {
+  var username = req.params.username;
+ res.render("users");
+});
 app.use(errorHandler);
 
 app.listen(app.get('port'), function() {
