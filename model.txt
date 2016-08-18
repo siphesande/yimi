@@ -60,3 +60,5 @@ c15e6718-f88d-4268-9afd-694f3cddd726
        checksum: 'f6a06c52509cd615afe3f014e88dc084' } ],
   modality: 'face' }
 1d10b4f2-220c-41ff-833d-0e7aa99fac26
+
+curl -d "user=MsEmma&key=A48iCfXkIEkbVs8QJC1Kp2ayGraieSbjqyLf0hHqZjEDIx4KAU7RLM&urls=http%3A%2F%2Fyimi.projectcodex.co%2Ffaces%2Fandre4.jpg&models=c15e6718-f88d-4268-9afd-694f3cddd726" https://klws.keylemon.com/api/recognize/

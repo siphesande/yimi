@@ -32,14 +32,12 @@ app.use(bodyParser.json());
 
 app.use(express.static('public'));
 
-
 function errorHandler(err, req, res, next) {
     res.status(500);
     res.render('error', {
         error: err
     });
 }
-
 
 app.get("/", function(req, res) {
     res.render('users_tony', {
@@ -78,11 +76,13 @@ app.post('/upload', function(req, res){
         "1d10b4f2-220c-41ff-833d-0e7aa99fac26", function(err, response){
           console.log(err);
           console.log(response);
+
+          var modelName = l.faces[0].results[0].name;
+          var matched = l.faces[0].results[0].score > 0.8;
+
+            res.json({status : "success", modelName : modelName, matched : matched});
         });
-
-        res.json({status : "success"});
     });
-
 });
 
 app.get('/user_dashboard/:username', function (req, res) {

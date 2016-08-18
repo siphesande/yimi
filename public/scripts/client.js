@@ -54,6 +54,21 @@ document.getElementById('snap').addEventListener('click', function() {
     var imgData = canvas.toDataURL("img/png", 0.1);
     $.post('/upload', {
         img : imgData
+    }, function(results){
+      //alert(results);
+
+      var video = document.querySelector("#video");
+
+      var classList = video.classList.remove('match');
+      var classList = video.classList.remove('no_match');
+
+      if(results.matched){
+        video.classList.add('match');
+      }
+      else{
+        video.classList.add('no_match');
+      }
+
     })
 
     console.log(imgData);
