@@ -10,9 +10,9 @@ var img_data2 = fs.readFileSync('./public/faces/zim2.jpg')
 var img_data3 = fs.readFileSync('./public/faces/zim3.jpg')
 
 api.createModel(
-    new Array('http://yimi.projectcodex.co/faces/andre1.jpg',
-            'http://yimi.projectcodex.co/faces/andre2.jpg',
-            'http://yimi.projectcodex.co/faces/andre3.jpg'
+    new Array('http://yimi.projectcodex.co/faces/zim1.jpg',
+            'http://yimi.projectcodex.co/faces/zim2.jpg',
+            'http://yimi.projectcodex.co/faces/zim3.jpg'
   ),
     new Array(
         img_data1,      // Images data
