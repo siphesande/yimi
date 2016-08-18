@@ -47,7 +47,7 @@ app.get("/", function(req, res) {
 });
 app.get('/user_dashboard/:username', function (req, res) {
   var username = req.params.username;
- res.render("users");
+ res.render("users1");
 });
 app.get('/search',function (req, res){
   res.render('search');
@@ -60,6 +60,10 @@ app.get('/image', function (req, res){
 });
 app.get('status', function (req, res){
   res.render('progress_status');
+});
+
+app.get('/forms', function (req, res){
+  res.render('forms');
 });
 
 app.use(errorHandler);
