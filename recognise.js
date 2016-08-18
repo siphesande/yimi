@@ -19,6 +19,6 @@ module.exports = function(url, modelId, cb) {
             if (err) {
                 return cb(err);
             }
-            cb(null, results)
+            cb(null, JSON.parse(results))
         })
 }

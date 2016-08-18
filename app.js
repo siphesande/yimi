@@ -89,7 +89,7 @@ app.post('/upload', function(req, res){
 
           if (response && response.faces){
             var modelName = response.faces[0].results[0].name;
-            
+
             var score = response.faces[0].results[0].score;
             console.log('score : ' + score);
 
