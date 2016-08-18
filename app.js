@@ -42,9 +42,24 @@ function errorHandler(err, req, res, next) {
 
 
 app.get("/", function(req, res) {
-    res.render('users1', {
+    res.render('users_tony', {
     });
 });
+
+
+app.get("/alan", function(req, res) {
+    res.render('users_alan', {
+    });
+});
+
+app.get("/", function(req, res) {
+    res.render('users2', {
+    });
+});
+
+
+
+
 app.get('/user_dashboard/:username', function (req, res) {
   var username = req.params.username;
  res.render("users1");
@@ -56,10 +71,18 @@ app.get('/add', function(req, res){
   res.render('add');
 });
 app.get('/image', function (req, res){
-  res.render('image');
+  res.render('snapShot');
 });
 app.get('status', function (req, res){
   res.render('progress_status');
+});
+
+app.get('/progress_tony', function (req, res){
+  res.render('progress_tony');
+});
+
+app.get('/progress_alan', function (req, res){
+  res.render('progress_alan');
 });
 
 app.get('/forms', function (req, res){
