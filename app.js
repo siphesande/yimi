@@ -39,6 +39,17 @@ function errorHandler(err, req, res, next) {
     });
 }
 
+app.get("/login", function(req, res) {
+    res.render('login', {
+    });
+});
+
+
+app.get("/notifications", function(req, res) {
+    res.render('notifications', {
+    });
+});
+
 app.get("/", function(req, res) {
     res.render('users_tony', {
     });
