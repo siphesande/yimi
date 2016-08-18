@@ -5,21 +5,23 @@ var api =  new klapi.KlAPI('MsEmma', 'A48iCfXkIEkbVs8QJC1Kp2ayGraieSbjqyLf0hHqZ
 
 // var image_url = 'http://www.keylemon.com/images/saas/group.jpg'
 //  
-var img_data = fs.readFileSync('./public/faces/andre1.jpg')
-var img_data1 = fs.readFileSync('./public/faces/andre2.jpg')
- 
+var img_data1 = fs.readFileSync('./public/faces/zim1.jpg')
+var img_data2 = fs.readFileSync('./public/faces/zim2.jpg')
+var img_data3 = fs.readFileSync('./public/faces/zim3.jpg')
+
 api.createModel(
     new Array('http://yimi.projectcodex.co/faces/andre1.jpg',
             'http://yimi.projectcodex.co/faces/andre2.jpg',
             'http://yimi.projectcodex.co/faces/andre3.jpg'
   ),
     new Array(
-        img_data,      // Images data
-        img_data1),
+        img_data1,      // Images data
+        img_data2,
+        img_data3),
     new Array(
                 // Existing face id
     ),
-    "andresModel",    // The name of the model
+    "zimsModel",    // The name of the model
 
     function(errors, model){
 
