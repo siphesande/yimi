@@ -41,7 +41,7 @@ function errorHandler(err, req, res, next) {
 }
 
 
-app.get("/users", function(req, res) {
+app.get("/", function(req, res) {
     res.render('users1', {
     });
 });
