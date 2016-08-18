@@ -93,7 +93,7 @@ app.post('/upload', function(req, res){
             var score = response.faces[0].results[0].score;
             console.log('score : ' + score);
 
-            var scoreThreshold = process.end.SCORE || 0.8;
+            var scoreThreshold = process.env.SCORE || 0.8;
             console.log('scoreThreshold : ' + scoreThreshold);
 
             var matched = score > 0.5;
