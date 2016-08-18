@@ -85,13 +85,19 @@ app.post('/upload', function(req, res){
         //recognise
         recognise(url,
         "1d10b4f2-220c-41ff-833d-0e7aa99fac26", function(err, response){
-          console.log(err);
-          console.log(response);
 
-          var modelName = l.faces[0].results[0].name;
-          var matched = l.faces[0].results[0].score > 0.8;
 
+          if (response && response.faces){
+            var modelName = response.faces[0].results[0].name;
+            var matched = response.faces[0].results[0].score > 0.8;
             res.json({status : "success", modelName : modelName, matched : matched});
+          }
+          else{
+            console.log(err);
+            console.log(response);
+            return res.json({status : "failed", modelName : '', matched : false});
+          }
+
         });
     });
 });
