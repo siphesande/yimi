@@ -56,7 +56,7 @@ app.get("/", function(req, res) {
 });
 
 
-app.get("/alan", function(req, res) {
+app.get("/agent", function(req, res) {
     res.render('users_alan', {
     });
 });
