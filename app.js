@@ -89,7 +89,16 @@ app.post('/upload', function(req, res){
 
           if (response && response.faces){
             var modelName = response.faces[0].results[0].name;
-            var matched = response.faces[0].results[0].score > 0.8;
+            
+            var score = response.faces[0].results[0].score;
+            console.log('score : ' + score);
+
+            var scoreThreshold = process.end.SCORE || 0.8;
+            console.log('scoreThreshold : ' + scoreThreshold);
+
+            var matched = score > 0.5;
+
+
             res.json({status : "success", modelName : modelName, matched : matched});
           }
           else{
