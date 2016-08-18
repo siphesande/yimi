@@ -1,5 +1,3 @@
-// 'use strict'
-
 var express = require('express'),
     exphbs = require('express-handlebars'),
     app = express(),
@@ -51,8 +49,6 @@ app.get('/user_dashboard/:username', function (req, res) {
   var username = req.params.username;
  res.render("users");
 });
-<<<<<<< HEAD
-=======
 app.get('/search',function (req, res){
   res.render('search');
 });
@@ -66,7 +62,6 @@ app.get('status', function (req, res){
   res.render('progress_status');
 });
 
->>>>>>> eb0ab56ab21a540972ac1c475cbbae7ee508c54b
 app.use(errorHandler);
 
 var port = process.env.PORT || 5000;
