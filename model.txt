@@ -1,0 +1,62 @@
+605b5c19-179d-4606-9a93-e472795aa7d4
+
+andresModel
+
+{ model_id: 'c15e6718-f88d-4268-9afd-694f3cddd726',
+  created: '2016-08-17 17:26',
+  name: 'andresModel',
+  nb_faces: 3,
+  faces:
+   [ { face_id: '054ced75-4df8-4eaf-93d3-349663d3916a',
+       x: 552,
+       y: 232,
+       w: 251,
+       w: 251,
+       h: 251,
+       image_url: '/api/image/6d02d03c-3e3e-4719-aadc-1c0f0b23eb54',
+       checksum: 'ca663078e4595ea32a0129d97b42458c' },
+     { face_id: '0a223531-90e0-45ea-a6a5-23718d9e1ebb',
+       x: 548,
+       y: 207,
+       w: 237,
+       h: 237,
+       image_url: '/api/image/44c54664-0bb7-4ae7-88d1-4cbf78ab9bae',
+       checksum: '23f6cefbfec63d77d72342fc58292dcc' },
+     { face_id: '100f21bd-b45e-40d7-98c9-2a72e1e967ac',
+       x: 615,
+       y: 227,
+       w: 201,
+       h: 201,
+       image_url: '/api/image/697961bc-f136-44af-bc17-2d42113c6922',
+       checksum: 'e02db4710a62f85d438f991bc51e0452' } ],
+  modality: 'face' }
+c15e6718-f88d-4268-9afd-694f3cddd726
+
+{ model_id: '1d10b4f2-220c-41ff-833d-0e7aa99fac26',
+  created: '2016-08-18 13:49',
+  name: 'zimsModel',
+  nb_faces: 3,
+  faces:
+   [ { face_id: 'fb0f4f61-4145-4493-b8f8-dcbf0c08746d',
+       x: 536,
+       y: 241,
+       w: 205,
+       h: 205,
+       image_url: '/api/image/81aba2fe-e297-4e54-ac9e-afa55645b651',
+       checksum: '66d93d3b3fd1f516246b5d39b2cb8d81' },
+     { face_id: '12fdf054-075e-4d7e-874f-827ef6407ff6',
+       x: 553,
+       y: 271,
+       w: 204,
+       h: 204,
+       image_url: '/api/image/26f13aa2-6395-42a8-8245-b0b3c30ce086',
+       checksum: '6ad15a71db09fd8298829837dcb8c137' },
+     { face_id: 'fc61f035-9d4c-4ec5-b8f0-66ace15ea85b',
+       x: 546,
+       y: 215,
+       w: 261,
+       h: 261,
+       image_url: '/api/image/17a3b7fd-0223-4dc4-bad4-5afa6a54c40b',
+       checksum: 'f6a06c52509cd615afe3f014e88dc084' } ],
+  modality: 'face' }
+1d10b4f2-220c-41ff-833d-0e7aa99fac26

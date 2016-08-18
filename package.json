@@ -15,7 +15,6 @@
     "express-handlebars": "^3.0.0",
     "express-myconnection": "^1.0.4",
     "mysql": "^2.11.1",
-    "request": "^2.74.0",
-    "superagent": "^2.2.0"
+    "request": "^2.74.0"
   }
 }

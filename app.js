@@ -5,6 +5,8 @@ var express = require('express'),
     myConnection = require('express-myconnection'),
     bodyParser = require('body-parser');
 
+var recognise = require('./recognise');
+
 var dbOptions = {
     host: 'localhost',
     user: 'root',
@@ -24,9 +26,7 @@ app.set('view engine', 'handlebars');
 //setup middleware
 //app.use(myConnection(mysql, dbOptions, 'single'));
 
-app.use(bodyParser.urlencoded({
-    extended: false
-}));
+app.use(bodyParser.urlencoded({ extended: false, limit : '5mb' }));
 
 app.use(bodyParser.json());
 
@@ -57,8 +57,33 @@ app.get("/", function(req, res) {
     });
 });
 
+app.get('/upload', function(req, res){
+    res.render('upload');
+});
 
+app.post('/upload', function(req, res){
 
+    base64Data = req.body.img.replace(/^data:image\/png;base64,/,"");
+    binaryData = new Buffer(base64Data, 'base64').toString('binary');
+
+    var fileName = (new Date()).getTime() + ".png";
+    require("fs").writeFile( './public/' +  fileName, binaryData, "binary", function(err) {
+        if (err)
+            return res.send({status : 'error', error : err})
+
+        var url = 'http://yimi.projectcodex.co/' + fileName;
+
+        //recognise
+        recognise(url,
+        "1d10b4f2-220c-41ff-833d-0e7aa99fac26", function(err, response){
+          console.log(err);
+          console.log(response);
+        });
+
+        res.json({status : "success"});
+    });
+
+});
 
 app.get('/user_dashboard/:username', function (req, res) {
   var username = req.params.username;
@@ -70,9 +95,7 @@ app.get('/search',function (req, res){
 app.get('/add', function(req, res){
   res.render('add');
 });
-app.get('/image', function (req, res){
-  res.render('snapShot');
-});
+
 app.get('status', function (req, res){
   res.render('progress_status');
 });
