@@ -89,8 +89,6 @@
                     <!-- end dropdown-messages -->
                 </li>
 
-
-
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <span class="top-label label label-warning">5</span>  <i class="fa fa-bell fa-3x"></i>
@@ -196,16 +194,17 @@
                         <a href="/"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
                     </li>
                     <li>
-                        <a href="/forms"><i class="fa fa-table fa-fw"></i>My Documents</a>
+                        <a href="/agent"><i class="fa fa-table fa-fw"></i>Tenant Documents</a>
                     </li>
 
                     <li>
-                       <a href="/progress"><i class="fa fa-flask fa-fw"></i>Appliction Progress</a>
+                       <a href="/progress_agent"><i class="fa fa-flask fa-fw"></i>Tenant Application Progress</a>
                    </li>
 
                     <li>
-                        <a href="/forms"><i class="fa fa-edit fa-fw"></i>Forms</a>
+                        <a href="/request"><i class="fa fa-edit fa-fw"></i>Request List</a>
                     </li>
+
 
 
                 </ul>
@@ -216,60 +215,60 @@
         <!-- end navbar side -->
         <!--  page-wrapper -->
         <div id="page-wrapper">
+          <div class="container">
 
             <div class="row">
                 <!-- Page Header -->
-                <div class="col-lg-12">
-                    <h1 class="page-header">Application Progress</h1>
-                </div>
+                <div class="col-lg-10">
+                    <h1 class="page-header">Request List</h1>
+                  </div>
+
+
+
+  <div class = col-md-6>                  <!-- <div class="container"> -->
+  <h2>Required Documents</h2>
+  <div class="form-group">
+      <!-- <label>Checkboxes</label> -->
+      <div class = "container">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Tenant : Emma Phiri</h3>
+        </div>
+        <div class="panel-body">
+Identity/Passport <input type="checkbox" checked="checked" value="docs"><br>
+Three months bank statement <input type="checkbox" checked="checked" value="docs"><br>
+Latest Payslip <input type="checkbox" checked="checked" value="docs"><br>
+Proof of previous address <input type="checkbox" checked="checked" value="docs"><br>
+
+ </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Tenant : Tom Hiddleston</h3>
+          Identity/Passport <input type="uncheckbox" unchecked="unchecked" value="not uploaded"><br>
+          Three months bank statement <input type="uncheckbox" unchecked="unchecked" value="not uploaded"><br>
+          Latest Payslip <input type="uncheckbox" unchecked="unchecked" value="not uploaded"><br>
+          Proof of previous address <input type="uncheckbox" unchecked="checked" value="not uploaded"><br>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Tenant : Roxanne Ruiters</h3>
+            Identity/Passport <input type="checkbox" checked="checked" value=""><br>
+            Three months bank statement <input type="uncheckbox" unchecked="checked" value="not uploaded"><br>
+            Latest Payslip <input type="checkbox" checked="checked" value=""><br>
+            Proof of previous address <input type="checkbox" checked="checked" value=""><br>
+          </div>
+ </div>
+      </div>
+
+
+
+      </div>
+</div>
                 <!--End Page Header -->
             </div>
 
-            <li class="dropdown">
-                <div class="container">
-                  <p>Tenant Emma</p>
-  <div class="progress">
-    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
-      100% Complete (verified Docs)
-    </div>
-  </div>
-  <p> Tenant Tom </p>
-  <div class="progress">
-    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
-      100% Complete (unverified Docs)
-    </div>
-  </div>
-  <p>Tenant Rox</p>
-  </div>
-  <div class="progress">
-    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%">
-      60% Complete (warning latest Bank statement pending)
-    </div>
-  </div>
-
-</div>
-
-
-                                <li class="timeline-inverted">
-                                    <div class="timeline-badge success">
-                                        <i class="fa fa-thumbs-up"></i>
-                                    </div>
-                                    <div class="timeline-panel">
-                                        <div class="timeline-heading">
-                                            <h4 class="timeline-title">Timeline Event</h4>
-                                        </div>
-                                        <div class="timeline-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel justo eu mi scelerisque vulputate. Aliquam in metus eu lectus aliquet egestas.</p>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
-                    <!--End Timeline -->
-                </div>
-            </div>
 
 
         </div>
@@ -285,6 +284,11 @@
     <script src="assets/plugins/pace/pace.js"></script>
     <script src="assets/scripts/siminta.js"></script>
 
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
 </body>
 
 </html>

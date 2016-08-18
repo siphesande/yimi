@@ -51,20 +51,16 @@ app.get("/notifications", function(req, res) {
 });
 
 app.get("/", function(req, res) {
-    res.render('users_tony', {
+    res.render('users_tenant', {
     });
 });
 
 
 app.get("/agent", function(req, res) {
-    res.render('users_alan', {
+    res.render('users_agent', {
     });
 });
 
-app.get("/", function(req, res) {
-    res.render('users2', {
-    });
-});
 
 app.get('/upload', function(req, res){
     res.render('upload');
@@ -126,16 +122,16 @@ app.get('status', function (req, res){
   res.render('progress_status');
 });
 
-app.get('/progress_tony', function (req, res){
-  res.render('progress_tony');
+app.get('/progress_tenant', function (req, res){
+  res.render('progress_tenant');
 });
 
-app.get('/progress_alan', function (req, res){
-  res.render('progress_alan');
+app.get('/progress_agent', function (req, res){
+  res.render('progress_agent');
 });
 
-app.get('/forms', function (req, res){
-  res.render('forms');
+app.get('/request', function (req, res){
+  res.render('requestlist');
 });
 
 app.use(errorHandler);
