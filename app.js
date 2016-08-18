@@ -43,30 +43,27 @@ function errorHandler(err, req, res, next) {
 }
 
 
-app.get("/", function(req, res) {
-    res.render('index', {
+app.get("/users", function(req, res) {
+    res.render('users1', {
     });
 });
 app.get('/user_dashboard/:username', function (req, res) {
   var username = req.params.username;
  res.render("users");
 });
-<<<<<<< HEAD
 app.get('/search',function (req, res){
   res.render('search');
 });
 app.get('/add', function(req, res){
   res.render('add');
 });
-app.get('/Picture', function (req, res){
-  res.render('getPic');
+app.get('/image', function (req, res){
+  res.render('image');
 });
 app.get('status', function (req, res){
   res.render('progress_status');
 });
-=======
 
->>>>>>> 55c3fce8a02f01f51b6713860f9eae83d282da85
 app.use(errorHandler);
 
 var port = process.env.PORT || 5000;
