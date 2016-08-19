@@ -11,7 +11,7 @@
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link href="assets/plugins/pace/pace-theme-big-counter.css" rel="stylesheet" />
     <link href="assets/css/style.css" rel="stylesheet" />
-      <link href="assets/css/main-style.css" rel="stylesheet" />
+    <link href="assets/css/main-style.css" rel="stylesheet" />
 
 
 </head>
@@ -91,7 +91,7 @@
 
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <span class="top-label label label-success">4</span>  <i class="fa fa-tasks fa-3x"></i>
+                        <span class="top-label label label-success">4</span> <i class="fa fa-tasks fa-3x"></i>
                     </a>
                     <!-- dropdown tasks -->
                     <ul class="dropdown-menu dropdown-tasks">
@@ -171,7 +171,7 @@
 
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <span class="top-label label label-warning">5</span>  <i class="fa fa-bell fa-3x"></i>
+                        <span class="top-label label label-warning">5</span> <i class="fa fa-bell fa-3x"></i>
                     </a>
                     <!-- dropdown alerts-->
                     <ul class="dropdown-menu dropdown-alerts">
@@ -278,8 +278,8 @@
                     </li>
 
                     <li>
-                       <a href="/progress_tenant"><i class="fa fa-flask fa-fw"></i>Application Progress</a>
-                   </li>
+                        <a href="/progress_tenant"><i class="fa fa-flask fa-fw"></i>Application Progress</a>
+                    </li>
 
                     <li>
                         <a href="/upload"><i class="fa fa-edit fa-fw"></i>Image upload</a>
@@ -294,44 +294,95 @@
         <!-- end navbar side -->
         <!--  page-wrapper -->
         <div id="page-wrapper">
-          <div class="container">
+            <div class="container">
 
-            <div class="row">
-                <!-- Page Header -->
-                <div class="col-lg-10">
-                    <h1 class="page-header">Welcome Tony</h1>
-                  </div>
+                <div class="row">
+                    <!-- Page Header -->
 
 
 
-  <div class = col-md-6>                  <!-- <div class="container"> -->
-  <h2>Alerts</h2>
-  <p>The a element with class="close" and data-dismiss="alert" is used to close the alert box.</p>
-  <div class="alert alert-success">
-    <a href="#" class="" data-dismiss="alert" aria-label="close">&times;</a>
-    <strong>Success!</strong> This alert box could indicate a successful or positive action.
-  </div>
-  <div class="alert alert-info">
-    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-    <strong>Info!</strong> This alert box could indicate a neutral informative change or action.
-  </div>
-  <div class="alert alert-warning">
-    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-    <strong>Warning!</strong> This alert box could indicate a warning that might need attention.
-  </div>
-  <div class="alert alert-danger">
-    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-    <strong>Danger!</strong> This alert box could indicate a dangerous or potentially negative action.
-  </div>
 
-</div>
-                <!--End Page Header -->
+                    <div class=col-md-6>
+                        <!-- <div class="container"> -->
+                        <h2>Message Alerts</h2>
+                        <p>Your recent message alerts</p>
+
+                        <div class="alert alert-success">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <p> <strong>Success</strong> Your have been successful in your application.</p>
+                        </div>
+
+                        <div class="alert alert-danger">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <p><strong>Warning</strong> you need to upload your documents</p>
+                            <p><strong>Agent</strong> have sent you a request to verify</p>
+
+                            <!--  Modals-->
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                      Choose documents needed and upload to agent
+                                </div>
+                                <div class="panel-body">
+                                    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+upload                                    </button>
+                                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                    <h4 class="modal-title" id="myModalLabel">Send the following documents to agent</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <h2>Required Documents</h2>
+                                                    <div class="form-group">
+                                                        <!-- <label>Checkboxes</label> -->
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input type="checkbox" value="">Identity/Passport document
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input type="checkbox" value="">Three months bank statement
+                                                            </label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input type="checkbox" value="">Latest Payslip
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input type="checkbox" value="">Proof of previous address
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <button type="button" class="btn btn-success">Submit</button>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Modals-->
+                    </div>
+
+                </div>
+
             </div>
-
-
-
+            <!--End Page Header -->
         </div>
-        <!-- end page-wrapper -->
+
+
+
+    </div>
+    <!-- end page-wrapper -->
 
     </div>
     <!-- end wrapper -->
