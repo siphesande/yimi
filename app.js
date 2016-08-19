@@ -26,7 +26,10 @@ app.set('view engine', 'handlebars');
 //setup middleware
 //app.use(myConnection(mysql, dbOptions, 'single'));
 
-app.use(bodyParser.urlencoded({ extended: false, limit : '5mb' }));
+app.use(bodyParser.urlencoded({
+    extended: false,
+    limit: '5mb'
+}));
 
 app.use(bodyParser.json());
 
@@ -40,106 +43,107 @@ function errorHandler(err, req, res, next) {
 }
 
 app.get("/login", function(req, res) {
-    res.render('login', {
-    });
+    res.render('login', {});
 });
 
-
 app.get("/notifications", function(req, res) {
-    res.render('notifications', {
-    });
+    res.render('notifications', {});
 });
 
 app.get("/", function(req, res) {
-    res.render('users_tenant', {
-    });
+    res.render('users_tenant', {});
 });
-
 
 app.get("/agent", function(req, res) {
-    res.render('users_agent', {
-    });
+    res.render('users_agent', {});
 });
 
-
-app.get('/upload', function(req, res){
+app.get('/upload', function(req, res) {
     res.render('upload');
 });
 
-app.post('/upload', function(req, res){
+app.post('/upload', function(req, res) {
 
-    base64Data = req.body.img.replace(/^data:image\/png;base64,/,"");
+    base64Data = req.body.img.replace(/^data:image\/png;base64,/, "");
     binaryData = new Buffer(base64Data, 'base64').toString('binary');
 
     var fileName = (new Date()).getTime() + ".png";
-    require("fs").writeFile( './public/' +  fileName, binaryData, "binary", function(err) {
+    require("fs").writeFile('./public/' + fileName, binaryData, "binary", function(err) {
         if (err)
-            return res.send({status : 'error', error : err})
+            return res.send({
+                status: 'error',
+                error: err
+            })
 
         var url = 'http://yimi.projectcodex.co/' + fileName;
 
         //recognise
         recognise(url,
-        "1d10b4f2-220c-41ff-833d-0e7aa99fac26", function(err, response){
+            "1d10b4f2-220c-41ff-833d-0e7aa99fac26",
+            function(err, response) {
 
+                if (response && response.faces) {
+                    var modelName = response.faces[0].results[0].name;
 
-          if (response && response.faces){
-            var modelName = response.faces[0].results[0].name;
+                    var score = response.faces[0].results[0].score;
+                    console.log('score : ' + score);
 
-            var score = response.faces[0].results[0].score;
-            console.log('score : ' + score);
+                    var scoreThreshold = process.env.SCORE || 0.8;
+                    console.log('scoreThreshold : ' + scoreThreshold);
 
-            var scoreThreshold = process.env.SCORE || 0.8;
-            console.log('scoreThreshold : ' + scoreThreshold);
+                    var matched = score > 0.5;
 
-            var matched = score > 0.5;
-
-
-            res.json({status : "success", modelName : modelName, matched : matched});
-          }
-          else{
-            console.log(err);
-            console.log(response);
-            return res.json({status : "failed", modelName : '', matched : false});
-          }
-
-        });
+                    res.json({
+                        status: "success",
+                        modelName: modelName,
+                        matched: matched
+                    });
+                } else {
+                    console.log(err);
+                    console.log(response);
+                    return res.json({
+                        status: "failed",
+                        modelName: '',
+                        matched: false
+                    });
+                }
+            });
     });
 });
 
-app.get('/user_dashboard/:username', function (req, res) {
-  var username = req.params.username;
- res.render("users1");
+app.get('/user_dashboard/:username', function(req, res) {
+    var username = req.params.username;
+    res.render("users1");
 });
-app.get('/search',function (req, res){
-  res.render('search');
+app.get('/search', function(req, res) {
+    res.render('search');
 });
-app.get('/add', function(req, res){
-  res.render('add');
-});
-
-app.get('status', function (req, res){
-  res.render('progress_status');
+app.get('/add', function(req, res) {
+    res.render('add');
 });
 
-app.get('/progress_tenant', function (req, res){
-  res.render('progress_tenant');
+app.get('status', function(req, res) {
+    res.render('progress_status');
 });
 
-app.get('/progress_agent', function (req, res){
-  res.render('progress_agent');
+app.get('/progress_tenant', function(req, res) {
+    res.render('progress_tenant');
 });
 
-app.get('/request', function (req, res){
-  res.render('requestlist');
+app.get('/progress_agent', function(req, res) {
+    res.render('progress_agent');
+});
+
+app.get('/request', function(req, res) {
+    res.render('requestlist');
 });
 
 app.use(errorHandler);
 
 var port = process.env.PORT || 5000;
 
-var server = app.listen(port, function(){
-  var host =server.address().address;
-  var port = server.address().port;
-  console.log('Node app is running on port http://%s:%s', host, port);
+var server = app.listen(port, function() {
+    var host = server.address().address;
+    var port = server.address().port;
+    console.log('Node app is running on port http://%s:%s', host, port);
 });
